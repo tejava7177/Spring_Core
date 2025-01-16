@@ -1,5 +1,10 @@
 package hello.core.member;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
 
     // MemberRepository 라는 인터페이스에 MemoryMemberRepository라는 구현체를 선택
@@ -8,6 +13,7 @@ public class MemberServiceImpl implements MemberService{
 
 
     //생성자 주입
+    @Autowired //의존관계 자동 주입 (수동버전 : ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
