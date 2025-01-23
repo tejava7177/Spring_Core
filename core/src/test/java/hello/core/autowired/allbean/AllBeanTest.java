@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 public class AllBeanTest {
+
     @Test
     void findAllBean() {
         ApplicationContext ac = new
