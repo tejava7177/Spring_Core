@@ -1,15 +1,18 @@
 package hello.core.order;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+//@RequiredArgsConstructor  //final 이 붙은 값의 생성자를 자동으로 만들어줌
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
@@ -23,10 +26,12 @@ public class OrderServiceImpl implements OrderService {
 
     //생성자 주입
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
+
+
 
     //단일체계 원칙을 잘 고수함 => 할인 정책이 변경되더라도 주문 서비스를 고칠필요가 없음
     @Override

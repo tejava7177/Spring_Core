@@ -22,10 +22,10 @@ import org.springframework.context.annotation.FilterType;
 
 public class AutoAppConfig {
 
-    //수동 vs 자동 의존관계 주입 -> overriding 발생
-    @Bean(name = "memoryMemberRepository")
-    public MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
+//    //수동 vs 자동 의존관계 주입 -> overriding 발생
+//    @Bean(name = "memoryMemberRepository")
+//    public MemberRepository memberRepository() {
+//        return new MemoryMemberRepository();
+//    }
 
 }
