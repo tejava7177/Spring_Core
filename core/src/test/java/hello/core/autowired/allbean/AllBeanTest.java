@@ -15,6 +15,7 @@ public class AllBeanTest {
 
     @Test
     void findAllBean() {
+        
         ApplicationContext ac = new
                 AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
         DiscountService discountService = ac.getBean(DiscountService.class);
