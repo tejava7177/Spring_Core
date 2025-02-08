@@ -18,13 +18,15 @@ public class BeanLifecycleTest {
         ac.close();
     }
 
+
+    //코드수정
     @Configuration
     static class LifecycleConfig {
         //@Bean(initMethod = "init", destroyMethod = "close")
         @Bean
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
-            networkClient.setUrl("http://hello-spring.dev");
+            //networkClient.setUrl("http://hello-spring.dev");
             return networkClient;
         }
     }
