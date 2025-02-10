@@ -3,8 +3,6 @@ package hello.core.common;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -15,14 +13,15 @@ import java.util.UUID;
 public class MyLogger {
 
     private String uuid;
-    private String requesURL;
+    private String requestURL;
 
-    public void setRequesURL(String requesURL) {
-        this.requesURL = requesURL;
+
+    public void setRequestURL(String requestURL) {
+        this.requestURL = requestURL;
     }
 
     public void log(String message) {
-        System.out.println("[" + uuid + "]" + "[" + requesURL + "] " +  message);
+        System.out.println("[" + uuid + "]" + "[" + requestURL + "] " +  message);
     }
 
 
