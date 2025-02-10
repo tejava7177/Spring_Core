@@ -2,7 +2,6 @@ package hello.core;
 
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
@@ -12,11 +11,10 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
 public class AppConfig {
 
-    @Bean  //스프링 컨테이너 등록
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
@@ -33,7 +31,6 @@ public class AppConfig {
 
     @Bean
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy(); //정액 할인
+        return new FixDiscountPolicy(); // 정액 할인 정책 적용
     }
-
 }
